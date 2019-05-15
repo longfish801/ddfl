@@ -1,0 +1,58 @@
+#! clmap _htmlize
+
+#> dec
+	import io.github.longfish801.bltxt.node.BLNode;
+	import io.github.longfish801.bltxt.BLtxt;
+	import org.slf4j.Logger;
+	import org.slf4j.LoggerFactory;
+
+#> prefix
+	Logger LOG = LoggerFactory.getLogger('io.github.longfish801');
+
+#> map
+#>> args
+	String outKey, def out
+#>> closure
+	// 各記事ページを作成します
+	Map binds = [:];
+	binds['article'] = articleMap[outKey];
+	binds['body'] = engine.clmapServer.getAt('clmap:_html').cl('bltxt#body').call(articleMap.getAt(outKey).body).join("\n\n");
+	binds['navi'] = clmap.cl('article#navi').call(outKey);
+	return engine.templateHandler.apply(outKey, out, outKey, binds);
+#>> closure index
+	// 目次ページを作成します
+	Map binds = [:];
+	binds['latests'] = clmap.cl('index#latests').call();
+	binds['linkmap'] = clmap.cl('index#linkmap').call();
+	binds['kinds'] = ['everyday', 'logic', 'tale', 'scene'];
+	return engine.templateHandler.apply(outKey, out, outKey, binds);
+
+#> map article
+#>> args
+	String outKey
+#>> closure navi
+	// 各記事ページのナビゲーションリンクを作成します
+	def article = articleMap[outKey];
+	def preArticle = (article.idx > 0)? articleMap[articleMap.keySet()[article.idx - 1]] : null;
+	def nxtArticle = (article.idx < articleMap.keySet().size() - 1)? articleMap[articleMap.keySet()[article.idx + 1]] : null;
+	List links = [];
+	if (preArticle != null) links << """<a href="${preArticle.fname}.html"><img src="img/navi/prev.png" alt="←"></a>""";
+	links << """<a href="index.html#${article.kind}"><img src="img/navi/index.png" alt="↑"></a>""";
+	if (nxtArticle != null) links << """<a href="${nxtArticle.fname}.html"><img src="img/navi/next.png" alt="→"></a>""";
+	return links.join(' ');
+
+#> map index
+#>> closure latests
+	List links = [];
+	for (int idx = 0; idx < 5; idx ++){
+		def article = articleMap[articleMap.keySet()[idx]];
+		links << """<li>${article.longDate} <a href="${article.fname}.html">${article.title}</a> [${article.kind}]</li>""";
+	}
+	return links;
+#>> closure linkmap
+	Map linkmap = [:];
+	articleMap.each { String fname, def article ->
+		if (!linkmap.containsKey(article.kind)) linkmap[article.kind] = [];
+		linkmap[article.kind] << """<li><a href="${article.fname}.html">${article.title}</a> (${article.longDate})</li>""";
+	}
+	return linkmap;

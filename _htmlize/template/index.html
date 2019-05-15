@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/top.css" rel="stylesheet" type="text/css">
+<title>デデフラ</title>
+</head>
+<body>
+
+<h1>デデフラ</h1>
+
+<div id="title"><img src="img/title.gif" alt="デデフラ" width="300" height="150"></div>
+
+<div id="shortcut"><% kinds.each { %>| <a href="#<%= it %>"><%= it %></a> <% } %>|</div>
+
+<div id="latest">
+<h2>latest</h2>
+<ul>
+<%= latests.join("\n") %>
+</ul>
+</div>
+
+<% kinds.each { String kind -> %><div id="<%= kind %>">
+<h2><a name="<%= kind %>"><%= kind %></a></h2>
+<ul>
+<%= linkmap[kind].join("\n") %>
+</ul>
+</div><% } %>
+
+<div class="banner"><a href="/index.html"><img src="/about/ref/banner.gif" alt="*the long fish*" width="88" height="31" border="0"></a></div>
+
+</body>
+</html>
