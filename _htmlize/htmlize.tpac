@@ -36,23 +36,23 @@
 	def preArticle = (article.idx > 0)? articleMap[articleMap.keySet()[article.idx - 1]] : null;
 	def nxtArticle = (article.idx < articleMap.keySet().size() - 1)? articleMap[articleMap.keySet()[article.idx + 1]] : null;
 	List links = [];
-	if (preArticle != null) links << """<a href="${preArticle.fname}.html"><img src="img/navi/prev.png" alt="←"></a>""";
-	links << """<a href="index.html#${article.kind}"><img src="img/navi/index.png" alt="↑"></a>""";
-	if (nxtArticle != null) links << """<a href="${nxtArticle.fname}.html"><img src="img/navi/next.png" alt="→"></a>""";
-	return links.join(' ');
+	if (preArticle != null) links << """<a href="${preArticle.fname}.html"><i class="fas fa-arrow-circle-left"></i></a>""";
+	links << """<a href="index.html?kind=${article.kind}"><i class="fas fa-arrow-circle-up"></i></a>""";
+	if (nxtArticle != null) links << """<a href="${nxtArticle.fname}.html"><i class="fas fa-arrow-circle-right"></i></i></a>""";
+	return links.join('　');
 
 #> map index
 #>> closure latests
 	List links = [];
-	for (int idx = 0; idx < 5; idx ++){
+	for (int idx = 0; idx < 10; idx ++){
 		def article = articleMap[articleMap.keySet()[idx]];
-		links << """<li>${article.longDate} <a href="${article.fname}.html">${article.title}</a> [${article.kind}]</li>""";
+		links << """<li>${article.longDate}　<a href="${article.fname}.html">${article.title}</a> / ${article.kind}</li>""";
 	}
 	return links;
 #>> closure linkmap
 	Map linkmap = [:];
 	articleMap.each { String fname, def article ->
 		if (!linkmap.containsKey(article.kind)) linkmap[article.kind] = [];
-		linkmap[article.kind] << """<li><a href="${article.fname}.html">${article.title}</a> (${article.longDate})</li>""";
+		linkmap[article.kind] << """<li>${article.longDate}　<a href="${article.fname}.html">${article.title}</a></li>""";
 	}
 	return linkmap;
