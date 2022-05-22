@@ -1,0 +1,54 @@
+#! clmap:thtml
+
+#> map
+#>> args
+	Map bltxtMap
+	Map appendMap
+#>> return
+	Map binds
+#>> closure
+	binds = (resultKey == 'index')?
+		clmap.cl('#index').call(bltxtMap, appendMap) :
+		clmap.cl('#frag').call(bltxtMap, appendMap)
+#>> closure:index
+	binds = [
+		'draft': appendMap.draft
+	]
+#>> closure:frag
+	List keys = appendMap.draft.lowers.keySet() as List
+	int index = keys.indexOf("frag:${resultKey}" as String)
+	binds = [
+		'frag': appendMap.draft.lowers["frag:${resultKey}"],
+		'preFrag': appendMap.draft.lowers[keys[index - 1]],
+		'nxtFrag': appendMap.draft.lowers[keys[index + 1] ?: keys[0]]
+	]
+#>
+
+#> map:prepare
+#>> dec
+	import org.apache.commons.text.StringEscapeUtils
+#>> args
+	Map bltxtMap
+	Map appendMap
+#>> closure
+	if (resultKey == 'index') return
+	def frag = appendMap.draft.lowers["frag:${resultKey}"]
+	// HTMLへの変換ならびにHTML上の特殊文字をエスケープします
+	frag.dfltHtml = clmap.cl('../htmlize#dflt').call(bltxtMap["${frag.name}#dflt"].root)
+	frag.titleHtml = clmap.cl('../htmlize#dflt').call(
+		bltxtMap["${frag.name}#title"].root.find { it.xmlTag == 'line' }
+	)
+	frag.titleText = StringEscapeUtils.escapeHtml4(frag.title)
+	LOG.info('★config={}', clmap.solve('/clmap:thtml/map:const/config').config())
+	frag.kindJp = clmap.solve('/clmap:thtml/map:const/config').config().kind[frag.kind]
+#>
+
+#> map:const
+#>> config
+kind {
+	everyday = '日常'
+	logic = '理屈'
+	tale = '小咄'
+	scene = '場面'
+}
+#>

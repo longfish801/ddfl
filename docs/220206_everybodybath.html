@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&amp;subset=japanese">
+	<link href="css/style_night.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		<!--
+		body {
+			background-image: url(img/mat/bg_scene.png);
+		}
+		-->
+	</style>
+	<title>銭湯の思想</title>
+</head>
+<body class="container">
+
+	<header class="row justify-content-center align-items-center">
+		<div class="col-lg-8">
+			<h1>銭湯の思想</h1>
+		</div>
+	</header>
+
+	<main class="row justify-content-center align-items-center">
+		<div class="col-lg-8">
+			<p>　週末はいつも銭湯に行く。そこは熱め、ぬるめ、水風呂と温度によって浴槽が分かれている。<br/>
+　ぬるめの風呂にお爺さんがいた。なんだか違和感のある姿勢をしていた。みんな浴槽の壁に背中を預けるのに、そのお爺さんは壁のほうを向いている。やや中腰の姿勢で動こうとしない。<br/>
+　腰を痛めているのかなと想像した。やがて顔見知りらしきお年寄りたちが声をかけたけど、どうもお爺さんの反応が鈍い。細かい事情は聞こえなかったけど、やがて若い人に抱きかかえられるようにしてお爺さんは風呂からあがらされ、洗い場に座りこんだ。<br/>
+　銭湯の店員が来た。お爺さんに大丈夫か、休んだら歩けるかなどと話しかけていた。やんわり「一人で入れないのなら、もう銭湯はダメですよ」と教え諭していた。<br/>
+　いつか自分も遠い日、最後の銭湯に浸かることになるのかと思いを馳せると同時に、パラドックスのようなフレーズが心に浮かんだ。<br/>
+　みんなで入る銭湯は、一人で入ることができなければならない。一人でお風呂に入れる人たちによって、みんなの銭湯が成り立っている。<br/>
+　なんだか人生のヒントのようでもある。</p>
+		</div>
+	</main>
+
+	<nav class="row justify-content-center align-items-center">
+		<div class="col-lg-8 text-end">
+			<a href="990705_language.html"><i class="bi bi-arrow-left-circle"></i></a>
+			<a href="index.html" id="anchorIdx"><i class="bi bi-arrow-up-circle"></i></a>
+			<a href="190803_businessescape.html"><i class="bi bi-arrow-right-circle"></i></a>
+		</div>
+	</nav>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script>
+	window.onload = () => {
+		const kind = sessionStorage.getItem('kind');
+		if (!kind) return;
+		let anchorIdx = document.getElementById('anchorIdx');
+		let href = anchorIdx.getAttribute('href').replace('index.html', 'index.html?kind=' + kind);
+		anchorIdx.setAttribute('href', href);
+	};
+	</script>
+
+</body>
+</html>

@@ -1,27 +1,33 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&amp;subset=japanese">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<link href="css/blank.css" rel="stylesheet" type="text/css">
-<title>前進</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&amp;subset=japanese">
+	<link href="css/style_blank.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		<!--
+		body {
+			background-image: url(img/mat/bg_logic.png);
+		}
+		-->
+	</style>
+	<title>前進</title>
 </head>
-<body>
+<body class="container">
 
-<div class="container">
-<div class="row">
+	<header class="row justify-content-center align-items-center">
+		<div class="col-lg-8">
+			<h1>前進</h1>
+		</div>
+	</header>
 
-<div class="col-lg-2"></div>
-<div class="col-lg-8">
-
-<header>
-<h1>前進</h1>
-</header>
-
-<p>　一人の数学者がいた。名前をＱとしよう。日々の生活は苦しかったが、研究に静かな情熱を注いでいた。<br/>
+	<main class="row justify-content-center align-items-center">
+		<div class="col-lg-8">
+			<p>　一人の数学者がいた。名前をＱとしよう。日々の生活は苦しかったが、研究に静かな情熱を注いでいた。<br/>
 　百年近く前、数学史に名を残す学者が、整数論についてひとつの予想を記した。その予想について幾多の研究者が挑んできたが、誰も証明することはできなかった。ある大企業が出資する研究団体は、その予想を証明できたものに莫大な賞金を与えると発表した。<br/>
 　Ｑは他の研究者とは異なるアプローチをした。四色問題というものがある。白地図について、境界線で接する領域が同じ色にならないよう塗り分けるには、四色で足りるという予想である。これは思索や数式ではなく、考えられる場合分け全てについてコンピュータで延べ一千時間以上もの大量の計算を行うことで証明された。<br/>
 　この手法をＱは利用した。予想の証明に必要な手順をすべてプログラミング可能な機械的手順に置き換えることができないか調べたのだ。その結果、計算量は膨大になるが、証明が可能であることを発見した。<br/>
@@ -29,23 +35,33 @@
 　しかし、研究団体はＱへの賞金支払いを拒否した。<br/>
 　研究団体の代表はこう説明した。確かにＱは予想について証明可能であることを証明した。しかし、計算量が膨大すぎる。最新鋭のスーパーコンピュータをフル稼働しても、結果が得られるまでに五百万年以上かかる。これでは、予想が正しいのか誤っているのか事実上わからない。証明できていないのに等しい。<br/>
 　この発表に世界的な議論が巻き起こった。学術誌から一般的な科学読み物まで、ネットでの議論から酒場での歓談まで様々な意見が飛び交った。数学的に結果が得られるとわかっているならば、それは証明されたのと等しいのではないか。いや、結果を他の研究や技術に応用することができないのだから、意味がないのではないか。<br/>
-　そんな議論が続けられていたある日、Ｑは新聞記者のインタビューを受けた。賞金を与えなかった研究団体を告訴するつもりはあるかとの問いに、Ｑは静かに首を振って否定した。なぜ、と続けて問われ、こう答えた。<br/>
+　そんな議論が続けられていたある日、Ｑは新聞記者のインタビューを受けた。賞金を与えなかった研究団体を告訴するつもりはあるかとの問いに、Ｑは静かに首をふって否定した。なぜ、と続けて問われ、こう答えた。<br/>
 「私はこの研究により、ふたつのことを知りました。それだけで充分だと思うからです。まず、この世界には、人間が理解できることであるにも関わらず、人間の能力では解決できない問題が存在することを知りました。神や霊といった、人知を越えた神秘ではないにも関わらず、人間の寿命や身体能力といった有限性から、到達できない知の領域があることを、私は示すことができたんです」<br/>
 　言葉を切り、Ｑはインタビュアーから顔を逸らして続けた。<br/>
-「もうひとつは、その領域に対する人々の態度です。今、私を含めて、たくさんの研究者が証明に必要な計算量を少なくする方法を考えています。なんらかのエレガントな手法がみつかれば、短時間で証明できるかもしれません。また、一部の人は、個人所有のコンピュータ上で私の論文にある計算をそのまま行っているそうです。その人達が生きている間に結果はでないにも関わらずです。その人達の孫の世代までコンピュータを受け継いでも結果はでないんですよ？ もちろん、途中までの計算結果を他のコンピュータに受け継ぐこともできます。コンピュータが古くなっても交換すれば孫の孫の、そのまた孫の世代まで続けることができるでしょう。その意味で無駄にはなりません。しかし、あまりに微々たるものです。あまりに無意味な行為です。ですが、私にも、その人達の気持ちがわかるんです。これは、いったいなんなんでしょうね？」</p>
+「もうひとつは、その領域に対する人々の態度です。今、私を含めて、たくさんの研究者が証明に必要な計算量を少なくする方法を考えています。なんらかのエレガントな手法がみつかれば、短時間で証明できるかもしれません。また、一部の人は、個人所有のコンピュータ上で私の論文にある計算をそのまま行っているそうです。その人たちが生きている間に結果はでないにも関わらずです。その人たちの孫の世代までコンピュータを受け継いでも結果はでないんですよ？ もちろん、途中までの計算結果を他のコンピュータに受け継ぐこともできます。コンピュータが古くなっても交換すれば孫の孫の、そのまた孫の世代まで続けることができるでしょう。その意味で無駄にはなりません。しかし、あまりに微々たるものです。あまりに無意味な行為です。ですが、私にも、その人たちの気持ちがわかるんです。これは、いったいなんなんでしょうね？」</p>
+		</div>
+	</main>
 
-<nav>
-<a href="060416_genius.html"><i class="fas fa-arrow-circle-left"></i></a>　<a href="index.html?kind=logic"><i class="fas fa-arrow-circle-up"></i></a>　<a href="050220_figure.html"><i class="fas fa-arrow-circle-right"></i></i></a>
-</nav>
+	<nav class="row justify-content-center align-items-center">
+		<div class="col-lg-8 text-end">
+			<a href="060416_genius.html"><i class="bi bi-arrow-left-circle"></i></a>
+			<a href="index.html" id="anchorIdx"><i class="bi bi-arrow-up-circle"></i></a>
+			<a href="050220_figure.html"><i class="bi bi-arrow-right-circle"></i></a>
+		</div>
+	</nav>
 
-</div>
-</div>
-<div class="col-lg-2"></div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script>
+	window.onload = () => {
+		const kind = sessionStorage.getItem('kind');
+		if (!kind) return;
+		let anchorIdx = document.getElementById('anchorIdx');
+		let href = anchorIdx.getAttribute('href').replace('index.html', 'index.html?kind=' + kind);
+		anchorIdx.setAttribute('href', href);
+	};
+	</script>
 
 </body>
 </html>

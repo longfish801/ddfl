@@ -1,0 +1,73 @@
+@charset "utf-8";
+@import url(base.css);
+
+body {
+	background-image: url("../img/mat/bg.png");
+}
+h1 {
+	display:none;
+}
+h2 {
+	letter-spacing: 0.1em;
+	font-size: 1.5rem;
+	line-height: 1.7rem;
+}
+header {
+	padding: 5rem 0rem 4rem;
+}
+main {
+	background-image: url(../img/mat/skel.gif);
+}
+
+article {
+	padding: 1rem;
+}
+article.everyday {
+	background-image: url(../img/mat/bgm_everyday.png);
+}
+article.logic {
+	background-image: url(../img/mat/bgm_logic.png);
+}
+article.tale {
+	background-image: url(../img/mat/bgm_tale.png);
+}
+article.scene {
+	background-image: url(../img/mat/bgm_scene.png);
+}
+article.mono {
+	border: 0.5rem solid #F0FFF0;
+}
+article.mono:hover {
+	border: 0.5rem solid #C0FFC0;
+}
+article.blank {
+	border: 0.5rem solid #F0F0FF;
+}
+article.blank:hover {
+	border: 0.5rem solid #C0C0FF;
+}
+article.bless {
+	border: 0.5rem solid #FFF0F0;
+}
+article.bless:hover {
+	border: 0.5rem solid #FFC0C0;
+}
+article.night {
+	border: 0.5rem solid #F0F0F0;
+}
+article.night:hover {
+	border: 0.5rem solid #C0C0C0;
+}
+div.meta {
+	font-size: 0.8rem;
+	line-height: 1.1rem;
+	text-align: right;
+}
+nav {
+	font-size: 1.0rem;
+	line-height: 1.2rem;
+}
+img.titles {
+	width: 100px;
+	height: 100px;
+}

@@ -1,0 +1,37 @@
+@charset "utf-8";
+@import url(base.css);
+
+p {
+	letter-spacing: 0.1em;
+	font-size: 1.0rem;
+	line-height: 2.3em;
+	text-align: justify;
+	word-wrap: break-word;
+}
+h1 {
+	letter-spacing: 0.1em;
+	font-size: 1.5rem;
+	line-height: 1.7rem;
+}
+header, main, nav {
+	background-image: url(../img/mat/skel.gif);
+}
+div.col-lg-8 {
+	background-image: url(../img/mat/skel.gif);
+}
+header div.col-lg-8 {
+	margin: 2rem 1rem 0rem;
+	padding: 4rem 1rem 3rem;
+}
+main div.col-lg-8 {
+	margin: 0rem 1rem 0rem;
+	padding: 0rem 1rem 0rem;
+}
+nav div.col-lg-8 {
+	margin: 0rem 1rem 2rem;
+	padding: 3rem 1rem 2rem;
+}
+nav {
+	font-size: 3.0rem;
+	line-height: 3.2rem;
+}

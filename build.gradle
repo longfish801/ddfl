@@ -1,0 +1,50 @@
+/*
+ * build.gradle
+ *
+ * Copyright (C) io.github.longfish801 All Rights Reserved.
+ */
+
+plugins {
+	id 'groovy'
+	id 'java'
+	id 'java-library'
+}
+
+defaultTasks 'publish'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://longfish801.github.io/maven/' }
+}
+
+dependencies {
+	implementation 'ch.qos.logback:logback-classic:1.2.11'
+	implementation 'io.github.longfish801:yakumo:1.2.00'
+	implementation 'io.github.longfish801:tpac:1.2.00'
+	implementation 'org.codehaus.groovy:groovy-all:3.0.9'
+}
+
+// dosフォルダを削除します
+tasks.register('deleteDocsDir', Delete){
+	delete 'docs'
+}
+
+// 空のbuild/docsフォルダを作成します
+tasks.register('createDocsDir'){
+	dependsOn 'deleteDocsDir'
+	doLast { mkdir 'build/docs' }
+}
+
+// tpacファイルを変換してHTMLファイルを出力します
+tasks.register('convert', JavaExec) {
+	dependsOn 'classes', 'createDocsDir'
+	mainClass = 'Converter'
+	classpath = sourceSets.test.runtimeClasspath
+}
+
+// build/docsフォルダの内容をdocsフォルダにコピーします
+tasks.register('publish', Copy){
+	dependsOn 'convert'
+	from 'build/docs'
+	into 'docs'
+}
