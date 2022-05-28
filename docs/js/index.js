@@ -64,6 +64,19 @@ function showIndex(){
 	} else {
 		sessionStorage.removeItem('kind')
 	}
+	
+	// kindで絞り込みをするか否かによってボタンや文字の色を変える
+	let btns = document.getElementsByClassName('btn');
+	for (let btn of btns){
+		if (kind){
+			btn.classList.replace('btn-secondary', 'btn-light');
+			btn.style.color = '#333333'
+		} else {
+			btn.classList.replace('btn-light', 'btn-secondary');
+			btn.style.color = '#FFFFFF'
+		}
+	}
+	
 	// フラグ一覧を取得し、タイトル画像を追加する
 	let articles = (kind)?
 		grepFragsByKind(kind) :

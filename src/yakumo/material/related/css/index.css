@@ -63,6 +63,10 @@ div.meta {
 	line-height: 1.1rem;
 	text-align: right;
 }
+a.btn {
+	font-size: 0.8rem;
+	line-height: 1.1rem;
+}
 nav {
 	font-size: 1.0rem;
 	line-height: 1.2rem;
